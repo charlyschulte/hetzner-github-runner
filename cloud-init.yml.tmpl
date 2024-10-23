@@ -4,7 +4,7 @@ runcmd:
 - apt-get install -y docker.io docker-compose jq
 - useradd -u 1001 dockeruser
 - newgrp docker
-- groupadd -aG docker dockeruser
+- usermod -aG docker dockeruser
 - docker-compose -f /run/docker-compose.yml up -d
 write_files:
 - path: /run/docker-compose.yml
